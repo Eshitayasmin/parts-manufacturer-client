@@ -1,17 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './banner.css';
 
 const Banner = () => {
+  const navigate = useNavigate();
     return (
-        <div class="hero min-h-screen">
-        <div class="hero-content flex-col lg:flex-row-reverse">
-          <img src="https://api.lorem.space/image/movie?w=260&h=400" class="max-w-sm rounded-lg shadow-2xl" />
-          <div>
-            <h1 class="text-5xl font-bold">Box Office News!</h1>
-            <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-            <button class="btn btn-primary">Get Started</button>
-          </div>
+      <div class="hero min-h-screen banner">
+      <div class="hero-overlay bg-opacity-30"></div>
+      <div class="hero-content text-center text-neutral-content">
+        <div class="max-w-4xl">
+          <h1 class="mb-5 text-3xl lg:text-5xl font-bold ">Welcome To AR Parts Manufacturer!</h1>
+          <p class="mb-5 lg:mx-16">AR Parts sets the standard for quality and innovation in braking technology and is well-respected for our pioneering approach and thought leadership. From prototyping to production, our network of over 5,000 suppliers has the capacity for all of your manufacturing projects.</p>
+          <button onClick={() => navigate('/dashboard')} class="btn btn-accent text-white" >Get Started</button>
         </div>
       </div>
+    </div>
     );
 };
 

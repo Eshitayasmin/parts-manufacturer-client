@@ -8,6 +8,7 @@ import auth from '../../firebase.init';
 const Navbar = () => {
   const [user] = useAuthState(auth);
 
+  console.log(user);
   const handleSignOut = () =>{
     signOut(auth);
   }
@@ -28,7 +29,7 @@ const Navbar = () => {
     
     </>
     return (
-        <div className="navbar lg:flex lg:justify-around bg-slate-300">
+        <div className="navbar lg:flex lg:justify-around bg-amber-100">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -38,7 +39,7 @@ const Navbar = () => {
             {menuItems}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-2xl">AR Parts</a>
+          <a className="text-3xl font-serif text-fuchsia-600 font-lg">AR Parts Manufacturer</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
