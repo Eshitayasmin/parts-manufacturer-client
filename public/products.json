@@ -1,0 +1,50 @@
+[
+{
+  "name": "Condenser Coil",
+  "img": "https://5.imimg.com/data5/XW/JS/IA/SELLER-29284326/ac-coil-500x500.jpg",
+  "description": "Beverage-Air 305-362C Condenser Coil for Compatible Beverage-Air Refrigerators.",
+  "minimumQuantity": "125",
+  "availableQuantity": "1800",
+  "price" : "535"
+},
+{
+  "name": "Defrost Thermostat",
+  "img": "https://cdn.shopify.com/s/files/1/0285/1107/6405/products/5303917625CM_580x.png?v=1642354115",
+  "description": "KHUTEMART Aluminum All in 1 Appliances Spare Parts Whirlpool Single Door Refrigerator Defrost Thermostat Suitable for LG, Samsung",
+  "minimumQuantity": "210",
+  "availableQuantity": "4500",
+  "price" : "110"
+},
+{
+  "name": "Air Filter",
+  "img": "https://mobileimages.lowes.com/productimages/36a1dd3e-09ee-4f31-a074-d90d7ee5a494/47025705_12.jpg",
+  "description": "Frigidaire Air Filter - Helps reduce odors of the refrigerator, such as onions, garlic, fish, and stale milk to keep food fresher and longer.",
+  "minimumQuantity": "230",
+  "availableQuantity": "2650",
+  "price" : "70"
+},
+{
+  "name": "Water Filter",
+  "img": "https://cdn.shopify.com/s/files/1/1286/9985/products/nitrate-removal-smart-refrigerator-in-line-water-filter-system-crystal-quest-inline-water-filters-16335706062941.jpg?v=1594703603",
+  "description": "Frigidaire Water Filter - Water filter replacement reduces lead, chlorine, cycsts and particulates found in household water.",
+  "minimumQuantity": "280",
+  "availableQuantity": "4300",
+  "price" : "55"
+},
+{
+  "name": "Compressor",
+  "img": "https://static.grainger.com/rp/s/is/image/Grainger/6DLL6_AS03",
+  "description": "High Quality Semi-Hermetic Refrigeration Compressor (5HP-40HP)",
+  "minimumQuantity": "110",
+  "availableQuantity": "2500",
+  "price" : "329"
+},
+{
+  "name": "Ice Maker Assembly",
+  "img": "https://i5.walmartimages.com/asr/9cd581db-d1e7-4639-909b-a34225ae5cd9.328db9e0db82e2eb4dd72e9fd843a4d0.jpeg",
+  "description": "GE WR49X31524 Refrigerator Ice Maker Assembly.This GE Ice Maker Assembly contains the complete ice maker and housing",
+  "minimumQuantity": "170",
+  "availableQuantity": "3680",
+  "price" : "129"
+}
+]
