@@ -19,7 +19,7 @@ const Purchase = () => {
     return (
         <div>
             <div className='bg-red-200 py-8 lg:py-24'>
-                <div class="block lg:flex justify-around lg:w-1/2 rounded-md bg-base-100 shadow-xl mx-6 lg:mx-auto p-8 lg:p-12">
+                <div className="block lg:flex justify-around lg:w-1/2 rounded-md bg-base-100 shadow-xl mx-6 lg:mx-auto p-8 lg:p-12">
                     <div>
                         <img className='w-60 lg:w-96 h-48 lg:h-64' src={productDetail.img} alt="" />
                     </div>

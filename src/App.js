@@ -15,10 +15,10 @@ import RequireAuth from './Pages/Login/RequireAuth';
 import MyOrders from './Pages/DashBoard/MyOrders';
 import AddReview from './Pages/DashBoard/AddReview';
 import MyProfile from './Pages/DashBoard/MyProfile';
-import Users from './Pages/DashBoard/User';
 import AddProduct from './Pages/DashBoard/AddProduct';
 import ManageProducts from './Pages/DashBoard/ManageProducts';
 import ManageOrders from './Pages/DashBoard/ManageOrders';
+import Users from './Pages/DashBoard/Users';
 
 function App() {
   return (

@@ -15,6 +15,7 @@ const ManageOrders = () => {
     const navigate = useNavigate();
 
     const handleDelete = id => {
+        
             fetch(`http://localhost:5000/order/${id}`, {
                 method: 'DELETE',
                 headers: {
@@ -88,6 +89,7 @@ const ManageOrders = () => {
 
             {deletingOrder && <DeleteConfirmModal 
             deletingOrder={deletingOrder}
+            handleDelete={handleDelete}
            ></DeleteConfirmModal>}
         </div>
     );

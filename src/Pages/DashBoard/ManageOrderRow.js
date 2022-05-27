@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ManageOrderRow = ({ order, index, handleDelete, setDeletingOrder}) => {
-    const { _id, name, productName, quantity } = order;
+    const { name, productName, quantity } = order;
 
 
     return (
@@ -11,7 +11,7 @@ const ManageOrderRow = ({ order, index, handleDelete, setDeletingOrder}) => {
             <td>{productName}</td>
             <td>{quantity}</td>
             <td>
-                <label onClick={() => setDeletingOrder(order)} for="delete-confirm-modal" class="btn btn-outline btn-error btn-xs text-white">Delete</label>
+                <label onClick={() => setDeletingOrder(order)} for="delete-confirm-modal" className="btn btn-outline btn-error btn-xs text-white">Delete</label>
                 </td>
         </tr>
     );

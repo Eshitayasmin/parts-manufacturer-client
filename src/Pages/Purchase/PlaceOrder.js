@@ -41,6 +41,7 @@ const PlaceOrder = ({ productDetail }) => {
                 console.log(data);
                 if (data.success) {
                     toast.success(`Order has been placed`)
+                    event.target.reset();
                 }
                 else {
                     toast.error("Order didn't place")
@@ -71,16 +72,16 @@ const PlaceOrder = ({ productDetail }) => {
 
                     <form className='d-flex flex-column w-full mx-auto' onSubmit={handleBooking}>
                        
-                        <input type="text" name="name" placeholder="Type here" class="input input-bordered input-md block mb-3 mt-3 w-full lg:w-80 max-w-sm px-4" value={user?.displayName}/>
-                        <input type="email" name='email' class="input input-bordered input-md block  w-full lg:w-80 max-w-sm mb-3" readOnly value={user?.email} />
+                        <input type="text" name="name" placeholder="Type here" className="input input-bordered input-md block mb-3 mt-3 w-full lg:w-80 max-w-sm px-4" value={user?.displayName}/>
+                        <input type="email" name='email' className="input input-bordered input-md block  w-full lg:w-80 max-w-sm mb-3" readOnly value={user?.email} />
 
                         <input className='input input-bordered input-md block mb-3 w-full lg:w-80 max-w-sm' type="text" name="productName" id="" value={name} />
 
-                        <input name="quantity" id="quantity-field" className='input input-bordered input-md block mb-3 w-full lg:w-80 max-w-sm' value={quantity} onChange={(e) => seQuantity(e.target.value)}placeholder='Quantity'/>
+                        <input name="quantity" id="quantity-field" className='input input-bordered input-md block mb-3 w-full lg:w-80 max-w-sm' placeholder='Quantity'/>
 
                         <input name="address" className='input input-bordered input-md block mb-3 w-full max-w-sm' placeholder='Address' type='text'/>
                         <input name="phone" className='input input-bordered input-md block mb-3 w-full lg:w-80 max-w-sm' placeholder='Phone Number' type="number"/>
-                        <button type='submit' class="btn btn-wide w-full max-w-sm">Place Order</button>
+                        <button type='submit' className="btn btn-wide w-full max-w-sm">Place Order</button>
 
                       
                     </form>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import auth from '../../firebase.init';
+
 
 const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
@@ -47,7 +47,7 @@ const AddProduct = () => {
                         console.log(inserted);
                         if(inserted.result.insertedId){
                             toast.success('product added successfully')
-                            reset();
+                           reset();
                         }
                         else{
                             toast.error('Failed to add the product');
@@ -72,7 +72,7 @@ const AddProduct = () => {
                     <input className='block border w-96 rounded-sm max-w-sm  mb-3 p-2' placeholder='Minimum Quantity' type="number" {...register("minimumQuantity")} />
                     <input className='block border w-96 rounded-sm max-w-sm  mb-3 p-2' placeholder='Available Quantity' type="number" {...register("availableQuantity")} />
                     <input className='block border w-96 rounded-sm max-w-sm  mb-3 p-2' type="file" placeholder='Photo' {...register("image")} />
-                    <button type='submit' class="btn w-96 max-w-sm">Add Product</button>
+                    <button type='submit' className="btn w-96 max-w-sm">Add Product</button>
                 </form>
             </div> 
         </div>

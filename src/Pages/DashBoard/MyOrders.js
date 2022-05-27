@@ -4,6 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import DeleteConfirmModal from './DeleteConfirmModal';
 import OrderRow from './OrderRow';
 
 const MyOrders = () => {
@@ -13,7 +14,6 @@ const MyOrders = () => {
     const navigate = useNavigate();
 
     const handleDelete = id => {
-        // const proceed = window.confirm('Are you sure to want to delete this item?');
        
             fetch(`http://localhost:5000/order/${id}`, {
                 method: 'DELETE',
@@ -28,7 +28,8 @@ const MyOrders = () => {
                         toast.success(`order: ${id} is deleted`);
                         const remaining = orders.filter(order => order._id !== id);
                         setOrders(remaining);
-                       setDeletingOrder(null);
+                        setDeletingOrder(null);
+                      
                     }
                 })
         
@@ -78,12 +79,18 @@ const MyOrders = () => {
                                 index={index}
                                 order={order}
                                 handleDelete={handleDelete}
+                                setDeletingOrder={setDeletingOrder}
                             ></OrderRow>)
                         }
 
                     </tbody>
                 </table>
             </div>
+
+            {deletingOrder && <DeleteConfirmModal 
+            deletingOrder={deletingOrder}
+            handleDelete={handleDelete}
+           ></DeleteConfirmModal>}
         </div>
     );
 };
