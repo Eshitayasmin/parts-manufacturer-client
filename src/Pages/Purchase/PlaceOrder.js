@@ -16,7 +16,6 @@ const PlaceOrder = ({ productDetail }) => {
 
 
 
-
     const handleBooking = event => {
         event.preventDefault();
 
@@ -61,7 +60,7 @@ const PlaceOrder = ({ productDetail }) => {
 
     return (
         <div className='my-16 py-12  bg-slate-100'>
-            <div className="form-section">
+            <div className="form-section block lg:flex justify-around lg:w-1/2 rounded-md bg-base-100 shadow-xl mx-6 lg:mx-auto p-8">
                 <div className='form-div'>
                     <h2 className='text-info text-2xl font-bold mb-3'>Purchase</h2>
                     {/* <p className='text-md text-purple-500'>Quantity</p>
@@ -72,15 +71,15 @@ const PlaceOrder = ({ productDetail }) => {
 
                     <form className='d-flex flex-column w-full mx-auto' onSubmit={handleBooking}>
                        
-                        <input type="text" name="name" placeholder="Type here" class="input input-bordered input-md block mb-3 mt-3 w-full max-w-sm" value={user?.displayName}/>
-                        <input type="email" name='email' class="input input-bordered input-md block  w-full max-w-sm mb-3" readOnly value={user?.email} />
+                        <input type="text" name="name" placeholder="Type here" class="input input-bordered input-md block mb-3 mt-3 w-full lg:w-80 max-w-sm px-4" value={user?.displayName}/>
+                        <input type="email" name='email' class="input input-bordered input-md block  w-full lg:w-80 max-w-sm mb-3" readOnly value={user?.email} />
 
-                        <input className='input input-bordered input-md block mb-3 w-full max-w-sm' type="text" name="productName" id="" value={name} />
+                        <input className='input input-bordered input-md block mb-3 w-full lg:w-80 max-w-sm' type="text" name="productName" id="" value={name} />
 
-                        <input name="quantity" id="quantity-field" className='input input-bordered input-md block mb-3 w-full max-w-sm' value={quantity} onChange={(e) => seQuantity(e.target.value)}placeholder='Quantity'/>
+                        <input name="quantity" id="quantity-field" className='input input-bordered input-md block mb-3 w-full lg:w-80 max-w-sm' value={quantity} onChange={(e) => seQuantity(e.target.value)}placeholder='Quantity'/>
 
                         <input name="address" className='input input-bordered input-md block mb-3 w-full max-w-sm' placeholder='Address' type='text'/>
-                        <input name="phone" className='input input-bordered input-md block mb-3 w-full max-w-sm' placeholder='Phone Number' type="number"/>
+                        <input name="phone" className='input input-bordered input-md block mb-3 w-full lg:w-80 max-w-sm' placeholder='Phone Number' type="number"/>
                         <button type='submit' class="btn btn-wide w-full max-w-sm">Place Order</button>
 
                       

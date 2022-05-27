@@ -15,7 +15,7 @@ const Products = () => {
         <div className='px-12 lg:px-24 py-8 bg-stone-100'>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-16'>
           {
-                products?.map(product => <Product 
+                products?.slice(-6).map(product => <Product 
                   key={product._id} 
                   product={product}
                   ></Product>)

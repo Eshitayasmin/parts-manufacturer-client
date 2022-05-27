@@ -7,13 +7,14 @@ import auth from '../../firebase.init';
 import OrderRow from './OrderRow';
 
 const MyOrders = () => {
+    const [deletingOrder, setDeletingOrder] = useState(null);
     const [orders, setOrders] = useState([]);
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
 
     const handleDelete = id => {
-        const proceed = window.confirm('Are you sure to want to delete this item?');
-        if (proceed) {
+        // const proceed = window.confirm('Are you sure to want to delete this item?');
+       
             fetch(`http://localhost:5000/order/${id}`, {
                 method: 'DELETE',
                 headers: {
@@ -27,10 +28,10 @@ const MyOrders = () => {
                         toast.success(`order: ${id} is deleted`);
                         const remaining = orders.filter(order => order._id !== id);
                         setOrders(remaining);
-
+                       setDeletingOrder(null);
                     }
                 })
-        }
+        
     }
 
     useEffect(() => {

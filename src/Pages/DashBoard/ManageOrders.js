@@ -5,16 +5,16 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import DeleteConfirmModal from './DeleteConfirmModal';
 import ManageOrderRow from './ManageOrderRow';
 
 const ManageOrders = () => {
     const [manageOrders, setManageOrders] = useState([]);
+    const [deletingOrder, setDeletingOrder] = useState(null);
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
 
     const handleDelete = id => {
-        const proceed = window.confirm('Are you sure to want to delete this item?');
-        if (proceed) {
             fetch(`http://localhost:5000/order/${id}`, {
                 method: 'DELETE',
                 headers: {
@@ -28,11 +28,12 @@ const ManageOrders = () => {
                         toast.success(`order: ${id} is deleted`);
                         const remaining = manageOrders.filter(order => order._id !== id);
                         setManageOrders(remaining);
+                        setDeletingOrder(null);
 
                     }
                 })
         }
-    }
+    
 
     useEffect(() => {
         if (user) {
@@ -58,7 +59,7 @@ const ManageOrders = () => {
     }, [user]);
     return (
         <div>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto lg:my-12">
                 <table className="table w-full">
 
                     <thead>
@@ -77,13 +78,17 @@ const ManageOrders = () => {
                                 key={order._id}
                                 index={index}
                                 order={order}
-                                handleDelete={handleDelete}
+                                setDeletingOrder={setDeletingOrder}
                             ></ManageOrderRow>)
                         }
 
                     </tbody>
                 </table>
             </div>
+
+            {deletingOrder && <DeleteConfirmModal 
+            deletingOrder={deletingOrder}
+           ></DeleteConfirmModal>}
         </div>
     );
 };
