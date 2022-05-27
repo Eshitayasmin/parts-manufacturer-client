@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
+import useToken from '../../hooks/useToken';
 
 
 const Login = () => {
@@ -18,6 +19,7 @@ const Login = () => {
       const [sendPasswordResetEmail, RestSending, ResetError] = useSendPasswordResetEmail(auth);
       const navigate = useNavigate();
       const location = useLocation();
+      const [token] = useToken(user || gUser);
 
 
       let signInError;
@@ -25,10 +27,10 @@ const Login = () => {
     
       useEffect(() =>{
           
-      if (user || gUser) {
+      if (token) {
         navigate(from, {replace: true});
     }
-      }, [user, gUser, from, navigate]);
+      }, [token, from, navigate]);
 
   
 
