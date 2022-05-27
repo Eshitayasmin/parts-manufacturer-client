@@ -1,13 +1,14 @@
+import { toHaveClass } from '@testing-library/jest-dom/dist/matchers';
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
-import OrderRow from './OrderRow';
+import ManageOrderRow from './ManageOrderRow';
 
-const MyOrders = () => {
-    const [orders, setOrders] = useState([]);
+const ManageOrders = () => {
+    const [manageOrders, setManageOrders] = useState([]);
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
 
@@ -25,8 +26,8 @@ const MyOrders = () => {
                     console.log(data);
                     if (data.deletedCount) {
                         toast.success(`order: ${id} is deleted`);
-                        const remaining = orders.filter(order => order._id !== id);
-                        setOrders(remaining);
+                        const remaining = manageOrders.filter(order => order._id !== id);
+                        setManageOrders(remaining);
 
                     }
                 })
@@ -35,7 +36,7 @@ const MyOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order/${user?.email}`, {
+            fetch(`http://localhost:5000/order`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -51,13 +52,13 @@ const MyOrders = () => {
                     return res.json()
                 })
                 .then(data => {
-                    setOrders(data)
+                    setManageOrders(data)
                 })
         }
     }, [user]);
     return (
         <div>
-            <div className="overflow-x-auto lg:my-12">
+            <div className="overflow-x-auto">
                 <table className="table w-full">
 
                     <thead>
@@ -72,12 +73,12 @@ const MyOrders = () => {
                     <tbody>
 
                         {
-                            orders.map((order, index) => <OrderRow
+                            manageOrders.map((order, index) => <ManageOrderRow
                                 key={order._id}
                                 index={index}
                                 order={order}
                                 handleDelete={handleDelete}
-                            ></OrderRow>)
+                            ></ManageOrderRow>)
                         }
 
                     </tbody>
@@ -87,4 +88,4 @@ const MyOrders = () => {
     );
 };
 
-export default MyOrders;
+export default ManageOrders;
