@@ -5,21 +5,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 const Review = ({user}) => {
-    const {name, img, review, rating} = user;
+    const {name, review, rating} = user;
     return (
-        <div className=''>
-        <div className='flex'>
-        <img className='w-96' src={img} alt="" />
-        <p className=' text-lg md:text-2xl ml-2'>{name}</p>
-        </div>
+        <div className='border border-slate-300 bg-green-100 p-4 rounded-md text-center'>
+        <h1 className='text-xl text-blue-600'>{name}</h1>
          <p>{review}</p>
-         <p><span className='mr-3'>Ratings:</span>
+         <p><span>Ratings:</span>
          <Rating
          initialRating={rating}
          emptySymbol={<FontAwesomeIcon icon={faStar} />}
-         fullSymbol={<FontAwesomeIcon style={{color: 'goldenrod'}} icon={faStar} />}
+         fullSymbol={<FontAwesomeIcon style={{color: 'salmon'}} icon={faStar} />}
           readonly
-         ></Rating></p>
+         ></Rating> <span className='text-blue-400'> ({rating}) </span></p>
     </div>
     );
 };
