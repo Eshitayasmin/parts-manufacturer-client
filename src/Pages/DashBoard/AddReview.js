@@ -43,7 +43,8 @@ const AddReview = () => {
             <h4 className='text-blue-400 font-mono text-2xl lg:text-3xl lg:ml-96 px-4 mb-4'>Give Your Review Here</h4>
             <div className='w-10/12 lg:w-1/2 mx-4 lg:mx-auto'>
                 <form className='d-flex flex-column add-form' onSubmit={handleSubmit(onSubmit)}>
-                    <input className='block border w-96 rounded-sm max-w-sm  mb-3 p-2' placeholder='Review' {...register("review")} />
+                    <textarea class="block textarea textarea-bordered w-96 rounded-sm max-w-sm  mb-3 p-2" cols="30" rows="2" placeholder="Write your opinion here" required {...register("review")}></textarea>
+
                     <input className='block border w-96 rounded-sm max-w-sm  mb-3 p-2' type='text' placeholder='Rating  out of 5' {...register("rating")} />
                     <button type='submit' className="btn w-96 max-w-sm">Add Review</button>
                 </form>

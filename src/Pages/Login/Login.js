@@ -55,7 +55,6 @@ const Login = () => {
     const onSubmit = async data => {
         signInWithEmailAndPassword(data.email, data.password);
        
-        console.log(data);
     };
 
    

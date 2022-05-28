@@ -43,9 +43,9 @@ const ManageProducts = () => {
 
     return (
         <div>
-            <h2>Manage All Products: {products.length}</h2>
-            <div className="overflow-x-auto lg:my-12">
-                <table className="table w-full">
+            
+            <div className="overflow-x-auto lg:my-8">
+                <table className="table w-full max-w-md">
 
                     <thead>
                         <tr>
