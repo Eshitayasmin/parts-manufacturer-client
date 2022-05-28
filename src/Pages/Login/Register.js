@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import useToken from '../../hooks/useToken';
+import Loading from '../Shared/Loading';
 
 
 
@@ -16,7 +17,7 @@ const Login = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+      ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification : true});
       const [updateProfile, updating, updateError] = useUpdateProfile(auth);
       const navigate = useNavigate();
       const location = useLocation();
@@ -34,8 +35,11 @@ const Login = () => {
       }, [token, from, navigate]);
 
   
+      if(loading || updating){
+          return <Loading></Loading>
+      }
 
-    if(error || gError){
+    if(error || gError || updateError){
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
 

@@ -13,8 +13,7 @@ const OrderRow = ({ order, index, setDeletingOrder}) => {
             <td>{productName}</td>
             <td>{quantity}</td>
             <td>${price}</td>
-            <td>{transactionId && <p><span className='text-purple-400'>{transactionId}</span></p>}</td>
-            
+
             <td> { !paid 
             ?
             <Link to={`/dashboard/payment/${_id}`}><button className='btn btn-xs btn-success'>Payment</button></Link>
@@ -22,6 +21,7 @@ const OrderRow = ({ order, index, setDeletingOrder}) => {
              <button className='btn btn-xs btn-info text-white'>Paid</button>  
                 }
             </td>
+            <td>{transactionId && <p><span className='text-purple-400'>{transactionId}</span></p>}</td>
             <td>
             {
                 !paid && <label onClick={() => setDeletingOrder(order)} for="delete-confirm-modal" className="btn btn-outline btn-error btn-xs text-white">Cancel</label>

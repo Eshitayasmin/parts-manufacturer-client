@@ -60,7 +60,7 @@ const MyOrders = () => {
     return (
         <div>
             <div className="overflow-x-auto lg:my-12">
-                <table className="table w-full">
+                <table className="table table-compact w-full">
 
                     <thead>
                         <tr>
@@ -69,8 +69,8 @@ const MyOrders = () => {
                             <th>Product Name</th>
                             <th>Quantity</th>
                             <th>Price</th>
-                            <th>Transaction Id</th>
                             <th>Pay</th>
+                            <th>Transaction Id</th>
                             <th>Manage</th>
                         </tr>
                     </thead>

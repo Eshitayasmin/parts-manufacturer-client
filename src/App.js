@@ -22,6 +22,7 @@ import ManageOrders from './Pages/DashBoard/ManageOrders';
 import Users from './Pages/DashBoard/Users';
 import Welcome from './Pages/Home/Welcome';
 import Payment from './Pages/DashBoard/Payment';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/welcome' element={< Welcome/>}></Route>
+        <Route path='/portfolio' element={<MyPortfolio/>}></Route>
         <Route path='/dashboard' element={
           <RequireAuth>
             <Dashboard />
