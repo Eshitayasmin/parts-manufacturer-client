@@ -34,7 +34,7 @@ const AddProduct = () => {
                     }
 
                     //send database
-                    fetch('http://localhost:5000/product', {
+                    fetch('https://limitless-basin-34615.herokuapp.com/product', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

@@ -16,7 +16,7 @@ const ManageOrders = () => {
 
     const handleDelete = id => {
         
-            fetch(`http://localhost:5000/order/${id}`, {
+            fetch(`https://limitless-basin-34615.herokuapp.com/order/${id}`, {
                 method: 'DELETE',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -38,7 +38,7 @@ const ManageOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order`, {
+            fetch(`https://limitless-basin-34615.herokuapp.com/order`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

@@ -10,7 +10,7 @@ const Purchase = () => {
     const [productDetail, setProductDetail] = useState({});
     
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://limitless-basin-34615.herokuapp.com/product/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProductDetail(data)

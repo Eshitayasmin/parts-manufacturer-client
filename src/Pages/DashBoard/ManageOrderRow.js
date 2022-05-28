@@ -7,7 +7,7 @@ const ManageOrderRow = ({ order, index, setDeletingOrder}) => {
 
     const handleShipped = event =>{
         const status = "shipped";
-        fetch(`http://localhost:5000/booking/${_id}`, {
+        fetch(`https://limitless-basin-34615.herokuapp.com/booking/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type" : "application/json",

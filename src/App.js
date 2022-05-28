@@ -50,7 +50,9 @@ function App() {
           <Route path='manageOrders' element={<RequireAdmin><ManageOrders/></RequireAdmin>}></Route>
         </Route>
         
-        <Route path='/purchase/:id' element={<Purchase />}></Route>
+        <Route path='/purchase/:id' element={<RequireAuth>
+          <Purchase/>
+        </RequireAuth>}></Route>
         <Route path='/blogs' element={<Blogs />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<Register />}></Route>

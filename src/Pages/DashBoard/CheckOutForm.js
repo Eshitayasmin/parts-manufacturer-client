@@ -15,7 +15,7 @@ const CheckOutForm = ({ booking }) => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://limitless-basin-34615.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -85,7 +85,7 @@ const CheckOutForm = ({ booking }) => {
                 pending: 'pending'
             }
 
-            fetch(`http://localhost:5000/booking/${_id}`, {
+            fetch(`https://limitless-basin-34615.herokuapp.com/booking/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

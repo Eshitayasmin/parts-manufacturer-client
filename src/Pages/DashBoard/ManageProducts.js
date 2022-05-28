@@ -8,7 +8,7 @@ import ProductDeleteModal from './ProductDeleteModal';
 const ManageProducts = () => {
     const [deletingProduct, setDeletingProduct] = useState(null);
 
-    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:5000/product/', {
+    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('https://limitless-basin-34615.herokuapp.com/product/', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -21,7 +21,7 @@ const ManageProducts = () => {
 
    const handleDelete = id =>{
    
-        fetch(`http://localhost:5000/product/${id}`, {
+        fetch(`https://limitless-basin-34615.herokuapp.com/product/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

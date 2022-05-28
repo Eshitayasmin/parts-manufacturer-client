@@ -20,7 +20,7 @@ const MyProfile = () => {
             
        
         }
-        fetch('http://localhost:5000/profile', {
+        fetch('https://limitless-basin-34615.herokuapp.com/profile', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

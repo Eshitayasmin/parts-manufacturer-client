@@ -17,7 +17,7 @@ const AddReview = () => {
             rating: data.rating,
             img: img
         }
-        fetch('http://localhost:5000/review', {
+        fetch('https://limitless-basin-34615.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -36,9 +36,8 @@ const AddReview = () => {
                     toast.error('Failed to add the review');
                 }
             })
-
-
     };
+
     return (
         <div className='w-screen my-12'>
             <h4 className='text-blue-400 font-mono text-2xl lg:text-3xl lg:ml-96 px-4 mb-4'>Give Your Review Here</h4>

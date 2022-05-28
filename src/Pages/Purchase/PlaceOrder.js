@@ -30,7 +30,7 @@ const PlaceOrder = ({ productDetail }) => {
             phone: event.target.phone.value,
         }
      if(booking.quantity >= minimumQuantity){
-        fetch('http://localhost:5000/order', {
+        fetch('https://limitless-basin-34615.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

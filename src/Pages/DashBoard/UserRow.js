@@ -5,7 +5,7 @@ const UserRow = ({user, refetch, index}) => {
     const { email, role } = user;
  
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://limitless-basin-34615.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -29,7 +29,7 @@ const UserRow = ({user, refetch, index}) => {
         const proceed = window.confirm('Are you sure you want to delete this user?');
 
       if(proceed){
-        fetch(`http://localhost:5000/user/${email}`, {
+        fetch(`https://limitless-basin-34615.herokuapp.com/user/${email}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51L4K9BEVWhXs6BkDtxZWzN2Zc6QT8mV5Z8CG0
 
 const Payment = () => {
     const { orderId } = useParams();
-    const url = `http://localhost:5000/booking/${orderId}`;
+    const url = `https://limitless-basin-34615.herokuapp.com/booking/${orderId}`;
 
     const { data: booking, isLoading } = useQuery(['booking', orderId], () => fetch(url, {
         method: 'GET',
