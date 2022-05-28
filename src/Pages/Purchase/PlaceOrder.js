@@ -7,7 +7,7 @@ import './PlaceOrder.css';
 
 const PlaceOrder = ({ productDetail }) => {
     const [user] = useAuthState(auth);
-    const { minimumQuantity, availableQuantity, name, _id } = productDetail;
+    const { minimumQuantity, availableQuantity, name, price, _id } = productDetail;
     const [quantityError, setQuantityError] = useState('');
     const [quantity, seQuantity] = useState('');
     const [disabled, setDisabled] = useState(false);
@@ -24,6 +24,7 @@ const PlaceOrder = ({ productDetail }) => {
             name: user?.displayName,
             email: user.email,
             productName: name,
+            price: price,
             quantity: event.target.quantity.value,
             address: event.target.address.value,
             phone: event.target.phone.value,
@@ -76,6 +77,8 @@ const PlaceOrder = ({ productDetail }) => {
                         <input type="email" name='email' className="input input-bordered input-md block  w-full lg:w-80 max-w-sm mb-3" readOnly value={user?.email} />
 
                         <input className='input input-bordered input-md block mb-3 w-full lg:w-80 max-w-sm' type="text" name="productName" id="" value={name} />
+
+                        <input name="price" id="" className='input input-bordered input-md block mb-3 w-full lg:w-80 max-w-sm' value={price} placeholder='Price'/>
 
                         <input name="quantity" id="quantity-field" className='input input-bordered input-md block mb-3 w-full lg:w-80 max-w-sm' placeholder='Quantity'/>
 

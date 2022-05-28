@@ -8,7 +8,6 @@ import auth from '../../firebase.init';
 const Navbar = () => {
   const [user] = useAuthState(auth);
 
-  console.log(user);
   const handleSignOut = () =>{
     signOut(auth);
     localStorage.removeItem('accessToken');
