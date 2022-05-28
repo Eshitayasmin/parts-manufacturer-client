@@ -81,7 +81,8 @@ const CheckOutForm = ({ booking }) => {
             //send database
             const payment ={
                 order: _id,
-                transactionId: paymentIntent.id
+                transactionId: paymentIntent.id,
+                pending: 'pending'
             }
 
             fetch(`http://localhost:5000/booking/${_id}`, {

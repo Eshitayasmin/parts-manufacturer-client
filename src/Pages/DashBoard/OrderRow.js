@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 const OrderRow = ({ order, index, setDeletingOrder}) => {
-    const { _id, name, productName, quantity, paid, price} = order;
+    const { _id, name, productName, quantity, paid, price, transactionId} = order;
 
  
     return (
@@ -13,9 +13,15 @@ const OrderRow = ({ order, index, setDeletingOrder}) => {
             <td>{productName}</td>
             <td>{quantity}</td>
             <td>${price}</td>
-            <td>{!paid ? <Link to={`/dashboard/payment/${_id}`}><button className='btn btn-xs btn-success'>Payment</button></Link>
+            <td>{transactionId && <p><span className='text-purple-400'>{transactionId}</span></p>}</td>
+            
+            <td> { !paid 
+            ?
+            <Link to={`/dashboard/payment/${_id}`}><button className='btn btn-xs btn-success'>Payment</button></Link>
             :
-            <button className='btn btn-xs btn-info text-white'>Paid</button>}</td>
+             <button className='btn btn-xs btn-info text-white'>Paid</button>  
+                }
+            </td>
             <td>
             {
                 !paid && <label onClick={() => setDeletingOrder(order)} for="delete-confirm-modal" className="btn btn-outline btn-error btn-xs text-white">Cancel</label>
