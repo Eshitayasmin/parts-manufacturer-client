@@ -19,6 +19,7 @@ import AddProduct from './Pages/DashBoard/AddProduct';
 import ManageProducts from './Pages/DashBoard/ManageProducts';
 import ManageOrders from './Pages/DashBoard/ManageOrders';
 import Users from './Pages/DashBoard/Users';
+import Welcome from './Pages/Home/Welcome';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home />}></Route>
+        <Route path='/welcome' element={< Welcome/>}></Route>
         <Route path='/dashboard' element={
           <RequireAuth>
             <Dashboard />
