@@ -52,6 +52,9 @@ const PlaceOrder = ({ productDetail }) => {
             })
 
      }
+     else if(availableQuantity < quantity){
+        toast.error(`You can not order more than ${minimumQuantity} pcs`)
+     }
   else{
       
       toast.error(`You can not order less than ${minimumQuantity} pcs`)
@@ -80,7 +83,6 @@ const PlaceOrder = ({ productDetail }) => {
                         <input name="address" className='input input-bordered input-md block mb-3 w-full max-w-sm' placeholder='Address' type='text'/>
                         <input name="phone" className='input input-bordered input-md block mb-3 w-full lg:w-80 max-w-sm' placeholder='Phone Number' type="number"/>
                         <button type='submit' className="btn btn-wide w-full max-w-sm">Place Order</button>
-
                       
                     </form>
 

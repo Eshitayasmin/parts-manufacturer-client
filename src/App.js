@@ -23,6 +23,7 @@ import Users from './Pages/DashBoard/Users';
 import Welcome from './Pages/Home/Welcome';
 import Payment from './Pages/DashBoard/Payment';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
+import About from './Pages/About/About';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/welcome' element={< Welcome/>}></Route>
         <Route path='/portfolio' element={<MyPortfolio/>}></Route>
+        <Route path='/about' element={<About/>}></Route>
         <Route path='/dashboard' element={
           <RequireAuth>
             <Dashboard />
