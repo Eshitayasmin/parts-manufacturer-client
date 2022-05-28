@@ -38,6 +38,11 @@ const Blogs = () => {
                 <p className='mb-2 text-justify'>A unit test is a way of testing a unit - the smallest piece of code that can be logically isolated in a system.   In procedural programming, a unit could be an entire module, but it is more commonly an individual function or procedure. In most programming languages, that is a function, a subroutine, a method or property. </p>
                 <p>Unit testing ensures that all code meets quality standards before it's deployed. This can help them to stay focused and can also help them to create much better designs.This makes your implementation details in your code shorter and easier to understand. Unit testing saves time and money, and helps developers write better code, more efficiently.</p>
             </div>
+            <div className='w-11/12 lg:w-8/12 border-2 border-slate-400 mx-auto p-8 rounded-md mt-12'>
+                <h1 className='text-2xl text-blue-700 mb-3'>Why you do not set the state directly in React?</h1>
+
+                <p className='text-md text-justify'>If update state directly then it won't re-render the component. If you update it directly, calling the setState() afterward may just replace the update you made. When you directly update the state, it does not change state. You will lose control of the state across all components. Instead use setState() method. It schedules an update to a component's state object. When state changes, the component responds by re-rendering.</p>
+            </div>
         </div>
     );
 };

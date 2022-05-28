@@ -40,7 +40,7 @@ const Navbar = () => {
             {menuItems}
             </ul>
           </div>
-          <a className="text-3xl font-serif text-fuchsia-600 font-lg">AR Parts Manufacturer</a>
+          <a className="text-md lg:text-3xl font-serif text-fuchsia-600 font-lg">AR Parts Manufacturer</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">

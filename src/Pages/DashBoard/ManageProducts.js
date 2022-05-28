@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 import Loading from '../Shared/Loading';
 import ManageProductRow from './ManageProductRow';
+import ProductDeleteModal from './ProductDeleteModal';
 
 const ManageProducts = () => {
+    const [deletingProduct, setDeletingProduct] = useState(null);
+
     const { data: products, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:5000/product/', {
         method: 'GET',
         headers: {
@@ -17,9 +20,7 @@ const ManageProducts = () => {
     }
 
    const handleDelete = id =>{
-    const proceed = window.confirm('Are you sure you want to delete this Product?');
-
-    if(proceed){
+   
         fetch(`http://localhost:5000/product/${id}`, {
             method: 'DELETE',
             headers: {
@@ -32,12 +33,13 @@ const ManageProducts = () => {
                 if (data.deletedCount) {
                     toast.success(`product: ${id} is deleted`);
                     refetch();
+                    setDeletingProduct(null);
     
                 }
             })
     }
    
-   }
+ 
 
     return (
         <div>
@@ -62,13 +64,20 @@ const ManageProducts = () => {
                                 key={product._id}
                                 index={index}
                                 product={product}
-                                handleDelete={handleDelete}
+                                setDeletingProduct={setDeletingProduct}
                             ></ManageProductRow>)
                         }
 
                     </tbody>
                 </table>
             </div>
+
+            {
+                deletingProduct && <ProductDeleteModal 
+                handleDelete={handleDelete}
+                deletingProduct={deletingProduct}
+                ></ProductDeleteModal>
+            }
 
         </div>
     );
